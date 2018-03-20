@@ -1,13 +1,16 @@
 <?php
 require_once 'init.php';
 require_once 'checkout.php';
+$randomizer = rand(0,5000);
 foreach ($_SESSION["cart_item"] as $item){
       if(!empty($_POST['customername']) && !empty($_POST['ctno'])){
-        $sql = "INSERT INTO reservedproduct(`customername`,`ctno`,`rquantity`,`code`,`price`,`date_reserved`,`randomizer`) VALUES (:customername,:ctno,:quantity,:code,:price,adddate(now(),3),:randomizer)";
+        $sql = "INSERT INTO reservedproduct(`customername`,`ctno`,`rquantity`,`code`,`price`,`date_reserved`,`randomizer`,`rproductname`)
+        VALUES (:customername,:ctno,:quantity,:code,:price,adddate(now(),3),:randomizer,:productname)";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':customername',$_POST['customername']);
         $stmt->bindParam(':ctno',$_POST['ctno']);
+        $stmt->bindParam(':productname',$item['productname']);
         $stmt->bindParam(':quantity',$item["quantity"]);
         $stmt->bindParam(':code',$item["code"]);
         $stmt->bindParam(':price',$item["price"]);

@@ -1,16 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['username'])){
-
- header( "refresh:1.5;url=login.php" );
- die( "Please Log in First! Redirecting shortly...");
-
-}
-?>
-
-
-<?php
-session_start();
 require_once("dbcontroller.php");
 require_once("init.php");
 $db_handle = new DBController();
@@ -19,7 +8,7 @@ switch($_GET["action"]) {
  case "add":
    if(!empty($_POST["quantity"])) {
      $productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-     $itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
+     $itemArray = array($productByCode[0]["code"]=>array('productname'=>$productByCode[0]["productname"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
 
      if(!empty($_SESSION["cart_item"])) {
        if(in_array($productByCode[0]["code"],array_keys($_SESSION["cart_item"]))) {
@@ -146,9 +135,40 @@ switch($_GET["action"]) {
 
   <div class="container">
 
-    <h3 class="header3">checkout</h3>
+    <h3>checkout</h3>
+    <?php
+    if(isset($_SESSION["cart_item"])){
+        $item_total = 0;
+    ?>
+    <table cellpadding="10" cellspacing="1">
+    <tbody>
+    <tr>
+    <th style="text-align:left;"><strong>Name</strong></th>
+    <th style="text-align:left;"><strong>Code</strong></th>
+    <th style="text-align:right;"><strong>Quantity</strong></th>
+    <th style="text-align:right;"><strong>Price</strong></th>
+    <th style="text-align:center;"><strong>Action</strong></th>
+    </tr>
+    <form method="POST" action="checkoutconfirm.php" class="top-space">
+      <?php
+          foreach ($_SESSION["cart_item"] as $item){
+      		?>
+      				<tr>
+      				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["productname"]; ?></strong></td>
+      				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
+      				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
+      				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "₱".$item["price"]; ?></td>
+      				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="checkout.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remove Item</a></td>
+      				</tr>
+      				<?php
+              $item_total += ($item["price"]*$item["quantity"]);
+      		}
+      		?>
 
-
+      <tr>
+      <td colspan="5" align=right><strong>Total:</strong> <?php echo "₱".$item_total; ?></td>
+      </tr>
+      <!–for table reserved person->
       <body class="con-bg">
         <div class="container">
           <h3>Pleae enter your information</h3>
@@ -163,62 +183,23 @@ switch($_GET["action"]) {
                 <input type="text" class="form-control" id="ctno" name="ctno" placeholder="Phone number" required="" min="09000000000" max="09999999999">
               </div>
             </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                  <form action="checkoutconfirm.php" method="post">
+                    <input type="submit"  id="code" name="submit" value="confirm"/>
+                  </form>
+              </div>
+            </div>
+
           </form>
         </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="form-group">
-            <div class="confirm">
-              <form action="checkoutconfirm.php" method="post">
-                <input type="submit"  id="code" name="submit" value="confirm"/>
-              </form>
-          </div>
-        </div>
-        </div>
-
       </body>
+      <!–end of table reserved person->
     </form>
-    <?php
-    if(isset($_SESSION["cart_item"])){
-        $item_total = 0;
-    ?>
-    <table cellpadding="50" cellspacing="1">
-    <tbody>
-    <tr>
-    <th style="text-align:left;margin:auto;padding:20px;"><strong>Name</strong></th>
-    <th style="text-align:left;margin:auto;padding:20px;"><strong>Code</strong></th>
-    <th style="text-align:right;margin:auto;padding:20px;"><strong>Quantity</strong></th>
-    <th style="text-align:right;margin:auto;padding:20px;"><strong>Price</strong></th>
-    <th style="text-align:center;margin:auto;padding:20px;"><strong>Action</strong></th>
-    </tr>
-    <form method="POST" action="checkoutconfirm.php" class="top-space">
-      <?php
-          foreach ($_SESSION["cart_item"] as $item){
-          ?>
-              <tr>
-              <td style="text-align:left;border-bottom:#F0F0F0 1px solid;margin:auto;padding:20px;"><strong><?php echo $item["name"]; ?></strong></td>
-              <td style="text-align:left;border-bottom:#F0F0F0 1px solid;margin:auto;padding:20px;"><?php echo $item["code"]; ?></td>
-              <td style="text-align:right;border-bottom:#F0F0F0 1px solid;margin:auto;padding:20px;"><?php echo $item["quantity"]; ?></td>
-              <td style="text-align:right;border-bottom:#F0F0F0 1px solid;margin:auto;padding:20px;"><?php echo "₱".$item["price"]; ?></td>
-              <td style="text-align:center;border-bottom:#F0F0F0 1px solid;margin:auto;padding:20px;"><a href="checkout.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remove Item</a></td>
-              </tr>
-              <?php
-              $item_total += ($item["price"]*$item["quantity"]);
-          }
-          ?>
-
-      <tr>
-      <td class="total" colspan="5" align=right><strong>Total:</strong> <?php echo "₱".$item_total; ?></td>
-      </tr>
-    </div>
   </div>
-
-
   <?php
   }
   ?>
-
-  <!--Footer -->
-
 </body>
 
 </html>
