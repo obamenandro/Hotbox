@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hotbox VapeShop</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slider.scss">
+    <link rel="stylesheet" href="css/modal.scss">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/set2.css" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <!-- script -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <!-- favicons -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<style>
+.borderimg1 {
+    border: 25px solid transparent;
+    -webkit-border-image: url(images/border.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(images/border.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(images/border.png) 30 round;
+}
+.borderimg2 {
+    border: 25px solid transparent;
+    -webkit-border-image: url(images/border1.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(images/border1.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(images/border1.png) 30 round;
+}
+#map{
+  height: 700px;
+  width:550px;
+}
+</style>
+<body id="top">
+  <!---Modal--->
+    <!-- header-->
+    <header class="s-header">
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+                <img src="images/logo1.png" alt="Homepage">
+            </a>
+        </div>
+        <nav class="header-nav">
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
+                    <li><a class="smoothscroll"  href="#new" title="NewArrival">New Arrivals</a></li>
+                    <li><a class="smoothscroll"  href="#featured" title="NewItem">Featured Items</a></li>
+                    <li><a class="smoothscroll"  href="#juice" title="NewItem">Featured Juices</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                </ul
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </div> <!-- end header-nav__content -->
+        </nav>  <!-- end header-nav -->
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+    </header> <!-- end s-header -->
+    <!-- home-->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/pag2.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+        <div class="home-content">
+            <div class="row home-content__main">
+                <h1 class="titleHead">
+                    Welcome to Hotbox VapeShop!
+                </h1>
+                <h3>
+                  Where all your Vape needs are here!
+                </h3>
+
+                <div class="home-content__buttons">
+                    <a href="shop.php" class="btn btn--stroke">
+                        Go to Shop!
+                    </a>
+                    <a href="login.php" class="btn btn--stroke">
+                        Login / Sign Up!
+                    </a>
+                    <a href="customize.html" class="smoothscroll btn btn--stroke">
+                        Package Maker!!!
+                    </a>
+                    <!--cut--->
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        More about us!
+                    </a>
+                </div>
+            </div>
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
+
+        </div> <!-- end home-content -->
+
+
+        <ul class="home-social">
+            <li>
+                <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+            </li>
+        </ul>
+        <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+    <div id="app"></div>
+    <div id="modal"></div>
+
+    <!-- about
+    ================================================== -->
+    <section id='about' class="s-about">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Hello There</h3>
+                <h1 class="display-1 display-1--light">This is the site of Hotbox Vapeshop</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                Hotbox Vapeshop was built in year 2015! Today it's one of the Growing Vapeshops in the province. We built a Vapeshop to avoid using cigarrete or lessen using smoke that can affect our health because of Nicotine. E-cigarrete (or Vape) is safe because it's does not contain nicotine as it depends on your e-liquid. Everybody is welcome to join us in vape community and Hotbox Vapeshop will provide all your Vaping needs and you can enjoy having new friend in our Vapeshop.
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="row half-bottom"  data-aos="fade-up">
+
+            <div class="col-six tab-full">
+
+                <h3 class="desc">Hotbox Crew</h3>
+                <p><img src="images/about2.jpg"
+                    srcset="images/about2.jpg 1000w,
+                    images/about2 500w"
+                    sizes="(max-width: 1000px) 100vw, 1000px" alt=""></p>
+
+            </div>
+
+            <div class="col-six tab-full">
+
+                <h3 class="desc">Hotbox Commercial</h3>
+
+                <div class="video-container">
+                  <video width="500" height="800" controls>
+                   <source src="images/promo.mp4" type="video/mp4">
+  </video>
+                </div>
+
+            </div>
+
+
+        </div> <!-- end row -->
+
+
+
+        <div class="about__line"></div>
+
+    </section> <!-- end s-about -->
+
+    <!-- clients
+    ================================================== -->
+    <section id="clients" class="s-clients">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What can you find here?</h3>
+                <h1 class="display-2">We have a wide range of products for our customers</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row clients-outer" data-aos="fade-up">
+            <div class="col-full">
+                <div class="clients">
+
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand2.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand3.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand4.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand5.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand6.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand7.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/brand8.png" /></a>
+
+                </div> <!-- end clients -->
+            </div> <!-- end col-full -->
+        </div> <!-- end clients-outer -->
+
+        <div class="row clients-testimonials" data-aos="fade-up">
+            <div class="col-full">
+                <div class="testimonials">
+
+                    <div class="testimonials__slide">
+
+                        <p>We offer a wide range of products of vape for our customers. Rest assured all customers will
+                        recieve the ultimate satisfaction they need when they purchased their desired vape and options</p>
+
+                        <img src="images/avatars/user.jpg" alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info">
+                            <span class="testimonials__name">Gerry Daluz</span>
+                            <span class="testimonials__pos">Owner of the Shop</span>
+                        </div>
+
+                    </div>
+
+                </div><!-- end testimonials -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end client-testimonials -->
+
+    </section> <!-- end s-clients -->
+
+
+
+    <!-- services
+    ================================================== -->
+    <section id='new' class="s-services">
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+          <div class="header">
+    <h1 class="display-3 display-3--light borderimg2">New Arrivals</h1>
+  </div>
+  <hr>
+  <div class="grid">
+    <figure class="effect-duke column borderimg1">
+          <img src="images/n1.jpg" alt=""/>
+      <figcaption>
+        <h2>Aegis <span>Kit</span></h2>
+        <p>Aegis Kit, including a Aegis Mod and a Shield Sub Ohm Tank, which is a newly released masterpiece by Geekvape. As you can see, Aegis mod is designed to be waterproof, shockproof and dustproof by adopting advanced LSR Injection Moulding technology.</p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure>
+    <figure class="effect-duke column borderimg1">
+      <img src="images/n2.jpg" alt=""/>
+      <figcaption>
+        <h2>AVOCADO <span>RTDA</span></h2>
+        <p>The Avocado 24 RDTA by Geek Vape features an outstanding 5mL juice well, improved hinge-lock filling system, optional bottom airflow version, and a larger profile of the top-airflow with bottom-tank structural architecture.</p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure>
+    <figure  class="effect-duke column borderimg1">
+      <img src="images/n4.jpg" alt=""/>
+      <figcaption>
+        <h2>CLAPTON <span>WIRE</span></h2>
+        <p>A Clapton coil is a vape wire consisting of a core of wire tigtly wrapped by, usually, a thinner gauge wire. ... He created the wire by turning a strand of 24-gauge kanthal in a drill and winding 32-gauge kanthal wire around it.</p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure>
+    <figure class="effect-duke borderimg1">
+        <img src="images/n5.jpg" alt=""/>
+      <figcaption>
+        <h2>THEORON 166<span>DNA MOD</span></h2>
+        <p>The Lost Vape Therion 166 is the newest generation of the critically acclaimed Therion platform, integrating the newest Evolv dual battery chipset in the DNA 166 while maintaining the beloved chassis design and luxury materials that the Therion has become renowned </p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure>
+    <figure class="effect-duke borderimg1">
+        <img src="images/n6.jpg" alt=""/>
+      <figcaption>
+        <h2>ALIEN <span>JUICE</span></h2>
+        <p>Alien Vape E Liquid. A breathtaking blend of melon goodness. Area 51 takes cantaloupe, honeydew and watermelon, mashes them together in a blender and makes a light, refreshing, sweet natural fruit vape juice.</p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure><figure class="effect-duke borderimg1">
+        <img src="images/n7.jpg" alt=""/>
+      <figcaption>
+        <h2>COIL<span>MASTER</span></h2>
+        <p>Coil Master is coiling tool make the best coils in the fastest time and rolling the wire to make coils.</p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure><figure class="effect-duke borderimg1">
+        <img src="images/n8.jpg" alt=""/>
+      <figcaption>
+        <h2>VAPE <span>AVENUE</span></h2>
+        <p>Vape Avenue is a premium juice that comes from Vape avenue and this juice is straberry flavor and this is a 30ml bottle.</p>
+        <a href="#">View more</a>
+      </figcaption>
+    </figure>
+    <figure class="effect-duke borderimg1">
+        <img src="images/n9.jpg" alt=""/>
+        <figcaption>
+          <h2>LG CHOCO <span>BATTERY</span></h2>
+          <p>A 20 amp, 3000 mAh milestone is, in some way a holy grail of stats. A battery that can both be high-drain, and high-capacity is just what everyone wants. The LG HG2 can be seen as a 500mAh capacity upgrade from its predecessors the HE2/HE4 which also have a 20A discharge limit.</p>
+          <a href="#">View more</a>
+        </figcaption>
+      <figure>
+</div>
+</hr>
+</div>
+
+
+<div  id='featured' class="row section-header has-bottom-sep" data-aos="fade-up">
+<div class="header">
+<h1 class="display-3 display-3--light borderimg2">Featured Items</h1>
+</div>
+<hr>
+<div class="grid">
+<figure class="effect-duke column borderimg1">
+<img src="images/list1.jpg" alt=""/>
+<figcaption>
+<h2>WISMEC<span>MOD</span></h2>
+<p>Wismec is the third generation of Reuleaux box mod, is smaller, lighter and more ergonomic than previous versions. Having a big 1.3inch OLED screen and brand-new interface, the GEN3 comes with three replaceable 18650 cells whose maximum output can reach 300W.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure class="effect-duke column borderimg1">
+<img src="images/list2.jpg" alt=""/>
+<figcaption>
+<h2>LIMITLESS ATOMIZER<span>XL TANK</span></h2>
+<p>The IJOY LIMITLESS XL TANK RTA, Features direct to coil fan-styled airflow control ring and a unique Rebuildable and Swappable Deck System. comes with premade coil and dual coil deck and single coil deck..</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure  class="effect-duke column borderimg1">
+<img src="images/list3.png" alt=""/>
+<figcaption>
+<h2>SONY VTCS<span>BATTERY</span></h2>
+<p>Sony VTC5 IMR cells have a much lower internal resistance than regular 3.7V lithium ions. Voltage could go higher when charged on certain chargers such as the older versions of the WF-139 charger. Always check the voltage of your 18650 IMR battery after a full charge to make sure it is above 4.2V. </p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure class="effect-duke borderimg1">
+<img src="images/list4.jpg" alt=""/>
+<figcaption>
+<h2>NITECORE 14<span>CHARGER</span></h2>
+<p>Four Charging Bays Independent Charging for Each Bay Compatibility: Li-Ion, IMR, Ni-Cd, Ni-MH Charges Sizes from AAAA to 26650.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure class="effect-duke borderimg1">
+<img src="images/list5.png" alt=""/>
+<figcaption>
+<h2>AEGIS<span> MOD</span></h2>
+<p>The Aegis box mod from Geekvape has generated a lot of hype since its release. The Aegis has been built to withstand all kinds of punishment. Geekvape claims it's military grade 810G-516.6 shockproof, and IP67 waterproof and dustproof. But aside from that, it's also a good-looking mod.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure><figure class="effect-duke borderimg1">
+<img src="images/list6.png" alt=""/>
+<figcaption>
+<h2>VAPEBREED<span>ATOMIZER</span></h2>
+<p>Geekvape 5ml Avocado 24 RDTA Tank Atomizer Velocity Deck with Hinge Lock Fill System black. ... Eleaf iStick Pico Coil 0.5 Ohm for Electronic Cigarette Head Atomizer Vape 5pcs. ... Authentic Geekvape Peerless Rda Special Edition Rebuildable Dripping Vape Atomizer - Gold, Stainless Steel .</p>
+<a href="#">View more</a>
+</figcaption>
+</figure><figure class="effect-duke borderimg1">
+<img src="images/list7.png" alt=""/>
+<figcaption>
+<h2>DC<span>WIRE</span></h2>
+<p>DC®Wires Philippines High quality wires on a reasonable price Clapton Fused clapton Twisted clapton.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure class="effect-duke borderimg1">
+<img src="images/list8.png" alt=""/>
+<figcaption>
+<h2>THERION DNA <span>MOD</span></h2>
+<p>The Lost Vape Therion 166 is the newest generation of the critically acclaimed Therion platform, integrating the newest Evolv dual battery chipset in the DNA 166 while maintaining the beloved chassis design and luxury materials.</p>
+</figcaption>
+<figure>
+</div>
+</hr>
+</div>
+
+<div  id='juice' class="row section-header has-bottom-sep" data-aos="fade-up">
+<div class="header">
+<h1 class="display-3 display-3--light borderimg2">Featured Juices</h1>
+</div>
+<hr>
+<div class="grid">
+<figure class="effect-duke column borderimg1">
+<img src="images/j1.png" alt="img33"/>
+<figcaption>
+<h2><span>CHURRIOS</span></h2>
+<p>The Milkman E-Liquid is an unbelievable mixture of perfectly fried and crisp churros, sprinkled with cinnamon sugar, then dunked into nutty honey cereal milk. Delicious, delicate, sweet and smooth. this juice size is 30ML</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure class="effect-duke column borderimg1">
+<img src="images/j2.png" alt="img17"/>
+<figcaption>
+<h2><span>HAZEL</span></h2>
+<p>Hazel by The Milkman E-Liquid presents a warm hazelnut butter swirled in with sweet vanilla cream and topped with a velvety caramel drizzle, this juice size is 30ML.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure  class="effect-duke column borderimg1">
+<img src="images/j3.png" alt="img33"/>
+<figcaption>
+<h2>WHITE<span>NECTAR</span></h2>
+<p>Vanilla Almond Cupcake. Ratio: 80/20. Strenght: 3mg & 6mg. E-Juice Disclaimer NOT FOR SALE TO MINORS | E-Liquid ordered from the Vapersgulf Webstore is for Adult Use Only and may contain some or all of the following ingredients (Propylene Glycol and/or Vegetable Glycerin.this juice size is 30ML</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+<figure class="effect-duke borderimg1">
+<img src="images/j4.png" alt="img33"/>
+<figcaption>
+<h2>CANDY<span>FLOSS</span></h2>
+<p>Candyfloss flavour eliquid, made in the UK for electronic cigarettes and personal vaping devices. Choose from a ... A cotton candy flavoured e-juice. Vape this and you ... as you receive it. For more information on our eliquid including ingredients, storage, care, strengths and blends.this juice size is 30ML</p>
+</figcaption>
+</figure>
+<figure class="effect-duke borderimg1">
+<img src="images/j5.png" alt="img33"/>
+<figcaption>
+<h2>MILKY<span>CHEESECAKE</span></h2>
+<p>Product details of Smok'em Temptation Blueberry Cheesecake Flavor E-Juice/Liquid 30ml. Ingredients: Crafted to Perfection by Smok 'Em; Additing taste that will make you crave for more.this juice size is 50ML</p>
+</figcaption>
+</figure><figure class="effect-duke borderimg1">
+<img src="images/j6.png" alt="img33"/>
+<figcaption>
+<h2>JUICE<span>Bamskilicious</span></h2>
+p>Antidote by Bamskilicious - 60ml. Watermelon Menthol 60%VG / 40%PG. this juice size is 30ML </p>
+<a href="#">View more</a>
+</figcaption>
+</figure><figure class="effect-duke borderimg1">
+<img src="images/j7.png" alt="img33"/>
+<figcaption>
+<h2>STRAWBERRY<span>DREAMS</span></h2>
+<p>To begin mixing this Strawberry Dream e-juice recipe, you will need bottles of E-Flavors™ Ripe Strawberry, Milk, and Cream flavor concentrates. Next, you will need a bottle of E-Base™ ready-to-flavor nicotine base that really is the easiest way to make e-liquid.this juice size is 30ML.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure><figure class="effect-duke column borderimg1">
+<img src="images/j8.png" alt="img17"/>
+<figcaption>
+<h2>PANCAKE <span>HOUSE</span></h2>
+<p>The Pancake House. Fluffy Pancake Goodness. Shop Now. Every bottle of Gost E-Liquid is made from the very best and finest ingredients. Our e-liquid is lab-made in California and our flavors are masterfully curated by vape connoisseurs like yourself.this juice size is 30ML.</p>
+<a href="#">View more</a>
+</figcaption>
+</figure>
+</div>
+</hr>
+</div>
+
+    </section> <!-- end s-services -->
+
+      <!-- Top Navigation -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact">
+
+        <div class="overlay"></div>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light">You are always welcome to visit us in the shop!</h1>
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+
+            <div class="contact-primary">
+              <div id="map"></div>
+              <script>
+                function initMap() {
+                  var uluru = {lat: 14.8931104, lng:120.7826637};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: uluru
+                  });
+                  var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                  });
+                }
+              </script>
+              <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnlmZ7Bg8yXSZIdbcwfR0Oy8i1m2_7xkw&callback=initMap">
+              </script>
+
+            </div>
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h4>Find us here in:</h4>
+                        <h5>
+                             #133 La Residencia <br>
+                            Malolos,Bulacan<br>
+
+                        </h5>
+                    </div>
+
+                    <div class="cinfo">
+                        <h4>Email us here!</h4>
+                        <h5>
+                             Hotbox@gmail.com<br>
+                        </h5>
+                    </div>
+
+                    <div class="cinfo">
+                        <h4>Get in the line with us! Call:</h4>
+                        <h5>
+                            Phone: 09163456714<br>
+                        </h5>
+                    </div>
+                    <div class="cinfo">
+                        <h4>Here's the schedule</h5>
+                        <h5>
+                            Monday to Sunday 11:00AM - 10:00PM
+                        </h5>
+                    </div>
+
+                    <ul class="contact-social">
+                        <li>
+                            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+
+                    </ul> <!-- end contact-social -->
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">
+
+                <div class="footer-logo"></div>
+                NOT FOR SALE TO MINORS!
+            </div>
+
+            <div class="col-six tab-full right footer-subscribe">
+
+                <h4>WARNING</h4>
+                <p>Warning: This product contains nicotine, this chemical cause birth defects or other reproductive harm. Products sold on Hotboxvapeshop.com are not smoking cessation products and have not been evaluated by the Food and Drug Administration, prevent or cure any disease or condition.</p>
+
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true">
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                        <input type="submit" name="subscribe" value="Subscribe">
+                        <label for="mc-email" class="subscribe-message"></label>
+                    </form>
+                </div>
+
+            </div>
+
+        </div> <!-- end footer-main -->
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>Made by Group 4</span>
+                    <span>A thesis project for the subject <a>SOFTWARE ENGINEERING</a></span>
+                </div>
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/sticky.js"></script>
+
+</body>
+
+</html>
